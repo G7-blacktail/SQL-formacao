@@ -1,0 +1,26 @@
+ Comandos importantes
+
+ Instalação no Ubunto (linux): 
+
+ - sudo apt-get update
+ - sudo apt-get upgrade
+ - sudo apt-get install mysql-server
+ - sudo apt-get install mysql-client
+
+ (verificando versão): mysql --version (também serve para o windows no cmd)
+
+ - sudo mysql_secure_installation (configurando segurança)
+
+ verificando status:
+
+ - sudo systemctl status mysql.service
+
+ OS demais comandos apresentados são SQL's padrão.
+
+ criando o banco: CREATE DATABASE <NOME>;
+ mostrar bancos: SHOW DATABASES;
+ usar banco: USE <NOME>;
+ excluir: DROP DATABASE <NOME>;
+ criar tabela: CREATE TABLE <NOME>;
+ para incluir parametros basta abrir parenteses e inserir os dados
+
