@@ -258,3 +258,75 @@ O HTAP (processamento transacional e analítico híbrido) é uma técnica de an�
 
 ### Aplicação: Modelagem de dados
 
+
+## Modelo de Entidade Relacionamento com banco de dados
+
+### Modelo ER: Tipos de entidades, chaves e atributos
+
+Processos: Tipos de entidades, atributos e chaves, relacionamentos, papéis e constraints, esquema relacional, diagrama ER (DER)
+
+    Entidades é basicamente um objeto que contem atributos sendo instanciado e guardando os atributos no banco os dados que estão relacionados a seus atributos.
+
+    Atributos: São as caracteristicas/ descrições das entidades e estão relacioandos a instâncias das mesmas.
+
+        tipos de atributos: Atômicos: São simples, contendo apenas 1 informação
+                            Compostos: São complexos e possuem variações, pode ser composto por uma concatenação de informações.
+
+                            Atributos multivalorados: São compostos por váriação de valor (grupo)
+
+                            Armazenados: É um atributo que não será mudado
+                            Derivados: É um atributo que é derivado de outro (data de nascimento -> idade)
+
+                            Atributos nulos: São atributos que podem conter ou não valor real, podendo conter valor NULL
+
+                            Atributos complexos: Está atrelado a estrutura sendo o mais complexo
+
+### Tipos de atributos dentro do modelo ER
+
+Multivalorados serão compostos por atributos que podem variar os dados encapsulados em sí. Podemos dizer que em multivalorados temos o intervalos.
+
+Também temos o atributo unkown que é um atributo que existe porém é desconhecido, diferente de NULL de certa forma.
+
+Antes de começar a falar de entidade vou descrever alguns simbolos e seus significados
+
+    quadrado : representa a entidade
+    circulo/elipse : representa o atributo atômico
+    circulo/elipse com um __underline abaixo do nome: representa um atributo composto
+    circulo/elipse sobreposto ou duplo: representa um atributo multivalorado
+
+
+### O que é a entidade fraca no modelo ER
+
+Entidades temos atributos e chaves;
+
+Uma entidade fraca precisa estar relacionada com outa para exitir, de forma que seja dependênte da outra.
+
+Ela possue a seguintes caracteristicas:
+
+    Chave não é obrigatória
+    Depêndencia
+    Exclusão em cascata
+
+Ela é representada por um quadrado duplo no Diagrama ER [[]] e para o relacionamento com elas um losango duplo <<>>
+
+### Exemplo de modelo conceitual - Company
+
+O exemplo foi feito no arquivo  [database.drawio] acompanhando o que foi dito na aula
+
+Elipse trastejada representa
+
+### Relacionamentos, papéis e constrainsts estruturais
+
+Relacionamentos estão inteiramente ligado a teoria de conjuntos se tratando de uma função podendo ser classificado:
+
+    Grau
+    Auto-relacional ou não
+    Cardinalidade
+
+Os graus podem ser binário (de 1 para 1 entidade), ternário (de 1 : 3 entidades) e any ( de N : N entidades)
+
+Relacionamentos como atributos não é uma prática correta, geralmente em primeiro momento pode ser definido porém a necessidade irá fazer com que ele seja convertido em um relacionamento.
+
+Papel: ao atribuir um papel para cada entidade vai ficando claro o relacionamento entre elas como : empregado - departamento.
+
+O auto-relacionamento 
