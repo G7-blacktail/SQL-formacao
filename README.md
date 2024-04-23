@@ -2,6 +2,8 @@
 
 Este repositório trata-se dos assuntos estudados no bootcamp da DIO.me sobre Database chamado Formação SQL Database Specialist, aqui estou guardando tudo que achei importante anotar para prosseguir em meu estudo.
 
+# Fundamentos de banco de dados Modulo 1 Anotações
+
 ## Arquitetura de banco de dados
 
 ### Arquitetura de BD: Modelos
@@ -78,5 +80,181 @@ Interfaces:
 
 ### Ambientes e utilities de SGBD
 
+gerenciamento, monitoramento, reorganização do storage, backup e loading são alguns dos utilities dentro do SGBD's existentes no mercado atualmente.
 
+DB design pode ser uma ferramenta muito ultil na hora de definir como será a banco de dados.
+
+### Arquitetura Modelo cliente-servidor
+
+### Classificação de SGBD's
+
+Modelos de dados, Nº de usuários Nº de sites, custo e tipo de caminho de acesso.
+
+Devemos levar em conta todos esses parâmetros para definir qual SGBD será usado.
+
+    modelo de dados: dependendo do tipo de arquivo que estamso querendo armazenar devemos decidir entre NoSQL ou SQL.
+
+    Nº Usuario: se houver um número grande de usuário e acessos.
+
+    Nº de sites: temos Big datas, replicação, DB federado e Heterogeneidade (fontes diferentes).
+
+Podemos classificar por performace também. 
+(OLTP)
+
+O OLTP ou Processamento de Transações Online é um tipo de processamento de dados que consiste na execução de várias transações que ocorrem simultaneamente (transações bancárias online, compras, entrada de pedidos ou envio de mensagens de texto, por exemplo).
+
+# Modelo de entidade relacional com banco de dados Modulo 2 anotações
+
+## Fundamentos de modelagem e projeto de banco de dados
+
+### Mundo Fechado e mini-mundo
+
+O conceito de mundo fechado quando estamos buscando uma informação que não está sendo contemplada (não existe) sempre será retornado falso e/ou quando realmente a informação seja falsa
+
+O conceito de mini-mundo trata-se de modelar apenas o que é necessário, representando o contexto, sendo representado pelo mínimo possível.
+
+O banco de dados, modelo lógico, irá armazenar apenas o que é apresentado no míni-mundo.
+
+Ex.: 
+Universidades 
+{
+    departamentos
+    {
+        profissionais,
+        professores
+    },
+    {
+        cursos
+    }
+}
+
+CWA: está atrelado ao míni-mundo, pois estamos delimitando o que queremos e tudo que estiver fora não pode ser respondido, sendo falso automáticamente.
+ Sendo uma preposição de lógica de predicados.
+
+### Álgebra relacional
+
+O predicado é a parte da oração que contém o verbo e que traz informações sobre o sujeito
+
+[critério] -> [having] [Where]
+
+Usando a teoria dos conjuntos temos a linguagem formal para consulta/extração de dados sendo as operações divididas em:
+
+[conjunto de operações] { Op. de conjuntos, Op. de BD relacional}
+
+Algumas dessas operações são:
+
+    1.  SELECTION
+    2.  PROJECTION
+    3.  RENAMING
+    4.  UNION
+    5.  INTERSECTION
+    6.  DIFFERENCE
+    7.  CARTESIAN PRODUCT
+    8.  JOIN
+    9.  LOGICAL AND
+    10. LOGICAL OR
+    11. LOGICAL NOT
+
+todos são exclusivos para SGBD's relacionais.
+
+tipos de operações que temos usando SQL:
+
+    ANY, MAX, AVG, COUNT, SUM, MIN 
+
+### Álgebra relacional e projeto de banco de dados
+
+Será enviado a álgebra relacional para o banco e será retornado o resultado da ação, com isso podemos perder a dependência da aplicação/dados, pois agora se tratara de N conjuntos individuais que podemos utilizar para as consultas (tabelas diferentes que podem ser consultadas e retornando como um conjunto resultante assim como a teoria dos conjuntos da álgebra comum).
+
+tradeoff : Há um pequeno delay entre inserir ou remover dados do banco, por este motivo temos que tratar esse delay dependendo da performace que queremos no banco.
+
+CLOCK do sistema > disponibilidade e tempo de gravação
+
+processos : Projeto conceitual, Projeto lógico, projeto físico, validação, produção, manutenção.
+
+### Falando sobre modelagem
+
+BD particular - Softwares - queries & updates ->
+
+            Aplicação de BD
+
+Neste ponto é explicado sobre as etapas de desenvolvimento
+
+            planejar 
+    agir               fazer
+            checar
+
+### Projeto: Como "nasce" um banco de dados?
+
+Para implementar é necessário fazer uma série de perguntas:
+
+    Como implementar um BD?
+        entender o contexto e requisitos
+        perfil
+    O que eu quero representar?
+
+Processo evolutivo ou gradual: implementação, modelo, arquitetura e funcionalidades.
+
+Cenários: Colaboradores, E-commerce, Universidade, Produção, Banco (financeiro), Farmácia, Biblioteca;
+
+Como resolver:
+
+    Modelagem
+
+    conceitual -> Lógico -> Físico
+
+### Design de BDs - Projeto Conceitual
+
+Podemos criar o modelo conceitual de forma gráfica ou até mesmo de forma textual
+
+Esta linguagem de modelagem de dados será uma representação dos dados.
+
+ 1º passo : requisitos, perguntas a serem respondidas, visões [coleta de dados] [ Análise]
+
+### Projeto conceitual: Entendendo o passo a passo
+
+Modelo de alto nível 
+
+    Requisitos { 
+                    O que executar? quais processos [ funcionais ]
+                    Segurança, desempenho [ não funcionais ]
+                }
+
+Neste momento não iremos pensar como será armazenado
+
+Fluxo da aplicação:
+
+    dados e requisitos { coleta, analise } 
+    design conceitual { Esquema conceitual }
+
+### Exemplificando o projeto conceitual e processo
+
+O processo será feito da seguinte forma:
+
+Projeto Coneceitual [O que vai ter?] ---> Projeto Lógico [Como estruturar?] ---> Projeto físico [Como implementar?]
+
+Os requisitos então resultaram em
+
+Esquema Conceitual ---> Esquema Lógico ---> Esquema Físico
+
+### Implementação: Projeto lógico e físico
+
+Neste ponto do projeto iremos para o projeto lógico a partir da descrição do modelo conceitual, onde identificaremos a estrutura e a organização dos dados, obviamente dependendo do modelo de banco de dados.
+
+[tabelas] -> [estrutura] -> [organização dos dados]
+
+então será feito o mapeamento do projeto conceitual para o projeto lógico resultando o esquema do BD.
+
+O percurso correto seria a criação do esquema lógico a instalação do SGBD e a criação do esquema do BD. Apartir do SGBD escolhido ele irá influencia o projeto lógico.
+
+Qual tipo de entidade, Relacionamento (binário ou não, cardinalidade) , atributos (multivalorados), restrições e integridade.
+
+Por fim o projeto físico é o resultado do projeto lógico e será a como a estrutura, índice, organização e caminhos de arquivos, segurança, performance, etc;
+
+### Fases de desenvolvimento de BDs e Aplicações
+
+O OLAP é uma tecnologia de banco de dados que foi otimizada para consulta e relatório, em vez de processar transações. Os dados de origem do OLAP são bancos de dados OLTP (Processamento Transacional Online) que são comumente armazenados em data warehouses.
+
+O HTAP (processamento transacional e analítico híbrido) é uma técnica de análise quase em tempo real sem a necessidade de uma solução ETL complexa. No Azure Synapse Analytics, o HTAP tem suporte por meio Link do Azure Synapse.
+
+### Aplicação: Modelagem de dados
 
