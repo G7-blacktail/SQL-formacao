@@ -330,3 +330,70 @@ Relacionamentos como atributos não é uma prática correta, geralmente em prime
 Papel: ao atribuir um papel para cada entidade vai ficando claro o relacionamento entre elas como : empregado - departamento.
 
 O auto-relacionamento 
+
+### Constraints de Relacionamentos binários
+
+A cardinalidade significa o máximo de insâncias que participam de um determinado relacionamento.
+
+ex.: 
+    [1:1] = 1 irá relaciona-se com apenas 1
+    [1:N] = 1 irá relaciona-se com muitos
+    [N:1] = Muitos iram se relacionar com 1
+    [M:N] = Muitos iram se relacionar com muitos
+    [1:3] = 1 irá relaciorna-se com 3
+
+Constraints de participação tem relação de dependência, tem uma cardinalidade minima e pode ser classificada em total e parcial.
+
+
+### Tipos de Entidades Fracas
+
+Existem 2 tipos de entidades: Fracas e fortes;
+
+para as fracas a sua existência depende de outra e geralmente sua exclução se dá em cascata (quando a entidade a qual ela é dependênte é apagada ela também é apagada).
+
+A entidade fraca é determinada por um retângulo duplo e a relação também será apresentada em um losango duplo.
+
+A participação total se dá quando uma entidade fraca não existe sem a entidade forte
+
+Também podemos definir o seguinte: Chave principal: linha continua
+                                   Chave parcial: linha pontilhada abaixo das palavras
+                                   Dependência de existência: é denotado por uma linha dupla
+                                   atributo derivado: circulo pontilhado
+
+
+### Refinando o Design ER para Company
+
+Nesta aula fizemos a alteração do Diagrama database.drawio inserindo com as mudanças necessárias ao lado
+
+### Alternativas - UML
+
+Foi explicado bem brevemente os diagramas UML
+
+### Relacionamentos de alto grau
+
+Ternário, ..., N-ário
+Perspectiva diferente do binário
+obs.: Instâncias refletem a visão (s,j,p)
+
+Trade-off na tomada de decisão
+
+Reflete a visão de três instânicas sendo elas como o exemplo s, j, p. Neste cenário temos um trade-off.
+
+    trecho retirado do GPT :
+        
+        No contexto de relacionamentos N-ários em bancos de dados, o termo "trade-off" refere-se aos compromissos ou escolhas que precisam ser feitas ao projetar e modelar esses relacionamentos. Isso ocorre porque os relacionamentos N-ários podem adicionar complexidade ao modelo de dados, e é necessário equilibrar diferentes considerações ao decidir como implementá-los.
+
+        Aqui estão alguns exemplos de trade-offs comuns em relacionamentos N-ários:
+
+        Complexidade da Consulta vs. Eficiência de Armazenamento: Relacionamentos N-ários podem resultar em consultas mais complexas, especialmente se envolverem múltiplas tabelas de junção ou associações indiretas. Por outro lado, podem ser eficientes em termos de armazenamento, especialmente se evitarem a duplicação de dados.
+        Flexibilidade vs. Estruturação Rígida: Um modelo com muitos relacionamentos N-ários pode oferecer flexibilidade ao lidar com diferentes tipos de associações entre entidades. No entanto, isso também pode tornar o modelo mais difícil de entender e manter, especialmente se os relacionamentos forem altamente variáveis.
+        Desempenho vs. Consistência: Às vezes, a denormalização (como combinar tabelas relacionadas para simplificar consultas) pode melhorar o desempenho das consultas, mas isso pode comprometer a consistência dos dados se não for gerenciado corretamente.
+        Facilidade de Manutenção vs. Eficiência de Consulta: Um modelo que visa facilitar a manutenção, como evitar muitos relacionamentos indiretos, pode ser mais fácil de entender e modificar. No entanto, isso pode resultar em consultas menos eficientes, especialmente se forem necessárias muitas junções para acessar informações relacionadas.
+        Ao lidar com relacionamentos N-ários, os projetistas de banco de dados precisam avaliar esses trade-offs com base nos requisitos específicos do sistema, priorizando aspectos como desempenho, facilidade de consulta, facilidade de manutenção e consistência dos dados. A escolha de um design adequado dependerá das necessidades da aplicação e das características específicas de cada cenário.
+
+### Exemplificação de relacionamentos N-ánio - consulta médica
+
+### Exemplificação de relacionamentos N-ánio - cursi e entrevista
+
+
+## 
