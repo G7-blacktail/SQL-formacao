@@ -396,4 +396,8 @@ Reflete a visão de três instânicas sendo elas como o exemplo s, j, p. Neste c
 ### Exemplificação de relacionamentos N-ánio - cursi e entrevista
 
 
-## 
+## Modelo Relacionamento de entidade Aprimirado com banco de dados
+
+### Modelo EER
+
+
