@@ -400,4 +400,35 @@ Reflete a visão de três instânicas sendo elas como o exemplo s, j, p. Neste c
 
 ### Modelo EER
 
+### Herança
+
+### Especialização e Generalização
+
+### Constraints de Generalização e Especialização - parte 1
+
+### Hierárquia & rede de Especialização
+
+### Modelagem de Union Types usando categorias
+
+### Esquema EER & Definições formais
+
+Todo Exemplo estará no cenario_universidade.drawio
+
+### Decisão sobre design de BD & UML
+
+Guideline:
+    Sub/Superclasses: Acurácia x Desordem
+    Merge de subclasse em uma superclasse: s/ relacionamentos e poucos atributos
+    Union Types: evitandos por padrão
+    Escolhas guiadas pelo mini-mundo
+
+### Terminologias Alternativas - parte 1
+
+Knowledge representation (KR): Representação do raciocinio (a máquina tenta representar a forma do raciocinio humano de forma que o computador possa entender);
+
+### Terminologias Alternativas - parte 2
+
+Ontologia: (Dominio) 
+
+## Explorando a Linguagem de Consulta a Banco de dados SQL
 
